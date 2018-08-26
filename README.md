@@ -19,16 +19,29 @@ Busy,
 Finished
 
 The following are the player states:
-Ready,
-NotReady,
-Start,
-Answering,
-Answered
+- Ready
+- NotReady
+- Start
+- Answering
+- Answered
 
 When players connect, they will be put in a lobby. From the lobby players can execute the following commands:
-/ready,
-/unready,
-/start,
-/exit
+- /ready
+- /unready
+- /start
+- /exit
 
 When two or more players are ready, any one of the players can start the game. A countdown will begin as soon as the /start command is entered. When the game is in Busy state, it will ignore all input from the client and only processes and displays data. When the game is AwaitingAnswers state, the input from the clients will be captured, and the player's state will change to Answered.
+
+### Score system
+
+The scoring works based on how many players there are in the game. The maximum possible points per round is equal to the total amount of players in the game. If a player answered the question correctly the fastest, that player will receive the maximum possible points, the player after will get one less from the maximum. Any player that answers incorrectly will receive 0. The scoring system takes latency into account as it is using timestamps when sending data.
+
+## Improvements
+
+There are a few improvements that could be made to the current project:
+- The disconnecting of players during game play should be handled better.
+- The state management is a bit messy, it should be cleaned up.
+- The user should be able to set the total rounds and round time limit in the server settings.
+- The server should do better lobby management to allow many users to connect and play.
+- Some of the function could be more decoupled.
