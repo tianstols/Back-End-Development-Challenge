@@ -8,7 +8,7 @@ The game was written in Golang. All the necessary files are inside the main fold
 
 TCP was used for the communication between the server and the clients. The server will keep listening for connections, but will limit the connections to four at a time. Golang threads and channels were used to allow the server and clients to communicate anytime, but the server decides if the data from clients are to be used depending on the states of the other clients and the game state. The following diagram shows how the communication was implemented:
 
-![Communication](https://github.com/tianstols/Back-End-Development-Challenge/tree/master/img//Communication.png)
+![Communication](https://github.com/tianstols/Back-End-Development-Challenge/blob/master/img/Communication.png)
 
 ###  Game logic
 
